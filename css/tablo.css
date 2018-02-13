@@ -1,0 +1,59 @@
+body {
+   font-family:"Courier", Times, serif;
+   font-size: 8px;
+}
+
+.button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 10px;
+    width: 100px;
+    height: 30px;
+    margin: 4px 2px;
+}
+
+textarea  {
+   font-family:"Courier", Times, serif;
+   font-size: 10px;
+   white-space: pre;
+   overflow-wrap: normal;
+   overflow-x: scroll;
+}
+
+
+.statclass  {
+   font-family:"Courier", Times, serif;
+   font-size: 10px;
+   white-space: pre;
+   color: white;
+   overflow-wrap: normal;
+   overflow-x: scroll;
+}
+
+table, th, td {
+    border: 1px solid white;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    padding: 1px;
+    color: white;
+    text-align: center;
+    vertical-align:top;
+
+}
+
+.table1, th, td {
+    border: 0px solid black;
+    border-collapse: collapse;
+    border-spacing: 5px;
+    padding: 1px;
+    color: white;
+    text-align: center;
+    vertical-align:top;
+
+}
+
