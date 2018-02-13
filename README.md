@@ -8,19 +8,20 @@ NOTE: THIS VERSION ONLY WORKS ON APPLE WEBKIT BROWSERS, SAFARI AND IOS
 
 ## Installing
 
+
 Set Tablo IP address in js/tablo.js
 
 ````
     var Tablo = "192.168.0.157";
 ````
 
-Start a webserver:
+Start a webserver, (I like using python like this example) then simply point your client at http://yourwebserver:8000/
+
 ```
 [MacMini]$ python -m SimpleHTTPServer 8000
-
 ```
 
-## YouTube Example:
+## YouTube Example
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NgzoxGgqtv4/0.jpg)](https://www.youtube.com/watch?v=NgzoxGgqtv4)
 
