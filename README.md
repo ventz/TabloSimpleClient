@@ -1,7 +1,7 @@
 
 # Tablo Simple Client
 
-Simple Tablo client proof of concept to watch TV on an iPad on a treadmill with easy access to channel change buttons. 
+Simple Tablo client proof of concept to watch TV on an iPad on a treadmill with easy access to channel change buttons.
 
 NOTE: THIS VERSION ONLY WORKS ON APPLE WEBKIT BROWSERS, SAFARI AND IOS
       DUE TO THE USE OF M3U8 PLAYLISTS DELIVERED BY TABLO
@@ -20,7 +20,7 @@ Start a webserver:
 
 ```
 
-## Example:
+## YouTube Example:
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/NgzoxGgqtv4/0.jpg)](https://www.youtube.com/watch?v=NgzoxGgqtv4)
 
