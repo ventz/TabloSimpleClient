@@ -12,13 +12,13 @@ $(function(){
          watchurl = "http://" + Tablo + ":8885/guide/channels/" + ThisChannel[3] + "/watch";
          watchstr = '<a href="' + watchurl + '">watch</a>';
          callsigns = {};
-         getCallSign(tmpurl, ThisChannel[3]);
+         getCallSign(tmpurl, ThisChannel[3], Tablo);
      }
   });
 });
 
-function getVideoURL(chanid,callsign){
-   tmpurl = "http://" + Tablo +":8885/guide/channels/" + chanid + "/watch";
+function getVideoURL(chanid,callsign,Tablo){
+   tmpurl = "http://" + Tablo + ":8885/guide/channels/" + chanid + "/watch";
    document.getElementById("status").innerHTML =  "Tuning to... " + callsign + " please wait...";
    console.log("Tuning to... " + callsign + "please wait...");
    $.post(tmpurl,function(watch = JSON.parse(data)) {
@@ -29,7 +29,7 @@ function getVideoURL(chanid,callsign){
     });
 }
 
-function getCallSign(tmpurl,chanid){
+function getCallSign(tmpurl,chanid,Tablo){
   $.get(tmpurl,function(data) {
      result = data.channel.major + "."
        + data.channel.minor
@@ -40,7 +40,7 @@ function getCallSign(tmpurl,chanid){
      console.log(buttonid);
      $('#channel_table tr:last').after("<tr><td><input id='" + buttonid + "' class='button' type='button' value='" + data.channel.call_sign +  "'/></td></tr>");
      $('#'+buttonid).on('click',function() {
-          getVideoURL(chanid,data.channel.call_sign);
+          getVideoURL(chanid,data.channel.call_sign,Tablo);
      });
   });
 }
