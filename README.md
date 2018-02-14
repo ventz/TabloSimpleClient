@@ -20,6 +20,11 @@ Start a webserver, (I like using python like this example) then simply point you
 ```
 [MacMini]$ python -m SimpleHTTPServer 8000
 ```
+You can also just run it from a file, just paste this below into your Safari browser if you don't want to set up a python server on your laptop:
+
+```
+file:///Users/jcuff/TabloSimpleClient/index.html
+```
 
 ## YouTube Example
 
@@ -32,6 +37,7 @@ Kudos and thanks to each of the following that were used to build this app:
 
 * [Tablo Plex Channel](https://github.com/plexinc-plugins/Tablo.bundle)
 * [jQuery](http://jquery.com/download/)
+* [hls.js](https://github.com/video-dev/hls.js/)
 
 **NOTE:  All trademarks are of their respective owners.**  
 
@@ -44,6 +50,7 @@ Kudos and thanks to each of the following that were used to build this app:
 
 ## TODO
 
+* Add HLS java script library! 
 * Add channel change buttons
 * Grab thumbnails and "now playing guide data"
 * Probably 1,000 other ideas... :-)
