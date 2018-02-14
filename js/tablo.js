@@ -8,7 +8,7 @@ $(function(){
      var index; 
      for (index = 0; index < channels.length; ++index) {
          ThisChannel = channels[index].split("/");
-         tmpurl = "http://192.168.0.157:8885/guide/channels/" + ThisChannel[3]; 
+         tmpurl = "http://" + Tablo + ":8885/guide/channels/" + ThisChannel[3]; 
          watchurl = "http://" + Tablo + ":8885/guide/channels/" + ThisChannel[3] + "/watch";
          watchstr = '<a href="' + watchurl + '">watch</a>';
          callsigns = {};
