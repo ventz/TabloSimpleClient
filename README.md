@@ -1,7 +1,9 @@
 
 # Tablo Simple Client
 
-Simple Tablo client proof of concept to watch TV on an iPad on a treadmill with easy access to channel change buttons.
+Simple Tablo client proof of concept to watch TV on an iPad on a treadmill with easy access to channel change buttons.  Tested on Windows, OSX and Android with IE, Firefox, Safari and Chrome.  
+
+NOTE: Working on trying to deliver via jquery.mobile on Playstation4 and Samsung TV browsers, not finished, but mostly hopeful...
 
 
 ## Installing
@@ -13,16 +15,19 @@ Set Tablo IP address in js/tablo.js
     var Tablo = "192.168.0.157";
 ````
 
-Start a webserver, (I like using python like this example) then simply point your client at http://localhost:8000/
-
-```
-[MacMini]$ python -m SimpleHTTPServer 8000
-```
-You can also just run it from a file, just paste this below into your Safari browser if you don't want to set up a python server on your laptop:
+You can just run it directly from a file, just paste this below into your Safari browser if you don't want to set up a python server on your laptop:
 
 ```
 file:///Users/jcuff/TabloSimpleClient/index.html
 ```
+
+
+Or, start a webserver if you need to access via a tablet, (I like using python like this example) then simply point your client at http://localhost:8000/
+
+```
+[MacMini]$ python -m SimpleHTTPServer 8000
+```
+
 
 ## YouTube Example
 
