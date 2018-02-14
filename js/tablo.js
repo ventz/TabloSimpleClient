@@ -18,27 +18,47 @@ $(function(){
 });
 
 function getVideoURL(chanid,callsign,Tablo){
+
    tmpurl = "http://" + Tablo + ":8885/guide/channels/" + chanid + "/watch";
    document.getElementById("status").innerHTML =  "Tuning to... " + callsign + " please wait...";
-   console.log("Tuning to... " + callsign + "please wait...");
+
    $.post(tmpurl,function(watch = JSON.parse(data)) {
-      console.log(watch.playlist_url);
-      document.getElementById("Video1").innerHTML = "\n\nWatch URL\n" + watch.playlist_url + "\n\n";
-      document.getElementById("Video1").innerHTML = '<video height="400" width="720" playsinline autoplay controls src="' + watch.playlist_url + '" type="application/x-mpegurl" class="media-document mac video"></video>';
-      document.getElementById("status").innerHTML =  "Now playing " + callsign;
-    });
+
+   if(Hls.isSupported()) {
+      var video = document.getElementById('video');
+      var hls = new Hls();
+      hls.loadSource(watch.playlist_url);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED,function() {
+        video.play();
+      });
+   }
+
+   else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+     video.src = watch.playlist_url;
+     video.addEventListener('canplay',function() {
+       video.play();
+     });
+   }
+   document.getElementById("status").innerHTML =  "Now playing " + callsign;
+  });
 }
 
 function getCallSign(tmpurl,chanid,Tablo){
+ 
   $.get(tmpurl,function(data) {
      result = data.channel.major + "."
        + data.channel.minor
        + " " + data.channel.resolution
        + "\n";
+
      callsigns[data.channel.call_sign] = result;
      buttonid = "channel_" + data.object_id;
-     console.log(buttonid);
-     $('#channel_table tr:last').after("<tr><td><input id='" + buttonid + "' class='button' type='button' value='" + data.channel.call_sign +  "'/></td></tr>");
+
+     $('#channel_table tr:last').after("<tr><td><input id='" + buttonid 
+       + "' class='button' type='button' value='" + data.channel.call_sign 
+       +  "'/></td></tr>");
+
      $('#'+buttonid).on('click',function() {
           getVideoURL(chanid,data.channel.call_sign,Tablo);
      });
